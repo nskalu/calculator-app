@@ -1,0 +1,39 @@
+h3 {
+    text-align: center;
+  }
+  
+  .outerdiv {
+    text-align: center;
+  }
+  
+  .innerdiv {
+    background-color:black;
+    width: 270px;
+    height: 500px;
+    display: inline-block;
+    border-radius: 55px;
+  }
+
+  button {
+    border-radius: 50%;
+    width: 60px;
+    height: 45px;
+  }
+  .btngrey{
+      background-color:rgba(170, 171, 173, 0.98);
+      color: whitesmoke;
+      font-weight: bolder;
+  }
+  .btnorange{
+      background-color: orange;
+      color:whitesmoke;
+      font-weight: bolder;
+  }
+  .btnash{
+      background-color: blanchedalmond;
+      font-weight: bolder;
+  }
+  label{
+      color:whitesmoke;
+      font-size: 50px;
+  }
