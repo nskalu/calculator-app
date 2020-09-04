@@ -74,13 +74,16 @@ for (let i = 0; i < nums.length; i++){
     debugger;
     if (isEqaulto) display = 0;
     isEqaulto=false;
+    //check if anything has been entered in the display area
     if (display===0){
-        output.value = obj.toElement.innerText
-        display = output.value
+        output.innerText = obj.toElement.innerText
+        display = output.innerText
     }      
     else{
-        output.value = display + obj.toElement.innerText
-        display = output.value
+        if (output.innerText.length < 10){
+            output.innerText = display + obj.toElement.innerText
+            display = output.innerText
+        }
      }
 }
 
