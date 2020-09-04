@@ -75,12 +75,12 @@ for (let i = 0; i < nums.length; i++){
     if (isEqaulto) display = 0;
     isEqaulto=false;
     if (display===0){
-        output.innerText = obj.toElement.innerText
-        display = output.innerText
+        output.value = obj.toElement.innerText
+        display = output.value
     }      
     else{
-        output.innerText = display + obj.toElement.innerText
-        display = output.innerText
+        output.value = display + obj.toElement.innerText
+        display = output.value
      }
 }
 
