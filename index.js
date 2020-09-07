@@ -32,38 +32,29 @@ perc.onclick = function(){
     calcAnswer = display;
 
 }
-
+//do the calculation on equal to button
 equalto.onclick = function(){
     debugger;
     let a = Number(calcAnswer);
     let b = Number(output.innerText);
     if (operator === "X") {
         display = Number(a) * Number(b);
-        output.innerText = display;
-        calcAnswer = display;
-        operator = ""
     }
     else if (operator === "/"){
         display = Number(a) / Number(b);
-        output.innerText = display;
-        calcAnswer = display;
-        operator = ""
     }
     else if (operator==="+"){
         display = Number(a) +  Number(b);
-        output.innerText = display;
-        calcAnswer = display;
-        operator = ""
     }
     else if (operator==="-"){
         display = Number(a) - Number(b);
-        output.innerText = display;
-        calcAnswer = display;
-        operator = ""
     }
     else{
         display = calcAnswer;
     }
+    output.innerText = display;
+    calcAnswer = display;
+    operator = "";
     isEqaulto = true;
 }
 
@@ -74,7 +65,7 @@ for (let i = 0; i < nums.length; i++){
     debugger;
     if (isEqaulto) display = 0;
     isEqaulto=false;
-    //check if anything has been entered in the display area
+    //check if anything has not been entered in the display area
     if (display===0){
         output.innerText = obj.toElement.innerText
         display = output.innerText
