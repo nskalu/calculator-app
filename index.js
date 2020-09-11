@@ -52,7 +52,14 @@ equalto.onclick = function(){
     else{
         display = calcAnswer;
     }
-    output.innerText = display;
+
+    if (display.length > 10){
+        //round off the answer
+        //display = Math.
+        output.innerText = display;
+    }
+    else output.innerText = display;
+    
     calcAnswer = display;
     operator = "";
     isEqaulto = true;
