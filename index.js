@@ -52,14 +52,30 @@ equalto.onclick = function(){
     else{
         display = calcAnswer;
     }
-
+    //we are allowing max of 10 characters to display
     if (display.length > 10){
+        //check if it's a whole number
+        if (display == Math.ceil(display)){
+            //it's a whole number, do the infinity evaluation
+        }
+        {
+            //it's a fraction, so check the length of the left part
+            if ((display + "").split(".")[0].length >= 10){
+                //display only the whole number part
+                output.innerText = display;
+            }
+            else{
+                //the left part is less than 10, so round up the right part, so everything must be 10 characters
+                let len = 10 - ((display + "").split(".")[0].length + 1)
+                display = display.toFixed(len);
+            }
+        }
         //round off the answer
         //display = Math.
         output.innerText = display;
     }
     else output.innerText = display;
-    
+
     calcAnswer = display;
     operator = "";
     isEqaulto = true;
