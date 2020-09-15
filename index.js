@@ -53,39 +53,44 @@ equalto.onclick = function(){
         display = calcAnswer;
     }
     //we are allowing max of 10 characters to display
-    if (display.length > 10){
+    if (display.toString().length > 10){
         //check if it's a whole number
         if (display == Math.ceil(display)){
             //it's a whole number, do the infinity evaluation
+            display = "Infinity";
+
         }
         {
             //it's a fraction, so check the length of the left part
-            if ((display + "").split(".")[0].length >= 10){
+            if ((display.toString() + "").split(".")[0].length >= 10){
                 //display only the whole number part
                 output.innerText = display;
             }
             else{
                 //the left part is less than 10, so round up the right part, so everything must be 10 characters
-                let len = 10 - ((display + "").split(".")[0].length + 1)
-                display = display.toFixed(len);
+                let len = 10 - ((display.toString() + "").split(".")[0].length)
+                display = display.toFixed(len); //this would round up to len decimal places
             }
         }
-        //round off the answer
-        //display = Math.
         output.innerText = display;
     }
-    else output.innerText = display;
+    else{
+        output.innerText = display;
+        console.log("less than 10 length")
+    } 
 
-    calcAnswer = display;
-    operator = "";
-    isEqaulto = true;
+    //if it's infinity value, start calculating afresh
+    if (!display.toString() === "infinity"){
+        calcAnswer = display;
+        operator = "";
+        isEqaulto = true;
+    }
 }
 
 for (let i = 0; i < nums.length; i++){
     nums[i].addEventListener("click", function(obj) {numbersF(obj)} );
 }
  function numbersF(obj){
-    debugger;
     if (isEqaulto) display = 0;
     isEqaulto=false;
     //check if anything has not been entered in the display area
