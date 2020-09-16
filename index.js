@@ -69,7 +69,8 @@ equalto.onclick = function(){
             else{
                 //the left part is less than 10, so round up the right part, so everything must be 10 characters
                 let len = 10 - ((display.toString() + "").split(".")[0].length)
-                display = display.toFixed(len); //this would round up to len decimal places
+                console.log(typeof(display));
+                display = parseFloat(display).toFixed(len); //this would round up to len decimal places
             }
         }
         output.innerText = display;
@@ -80,11 +81,14 @@ equalto.onclick = function(){
     } 
 
     //if it's infinity value, start calculating afresh
-    if (!display.toString() === "infinity"){
+    if (!(display.toString() == "Infinity")){
         calcAnswer = display;
-        operator = "";
-        isEqaulto = true;
     }
+    else{
+        calcAnswer = 0;
+    }
+    operator = "";
+    isEqaulto = true;
 }
 
 for (let i = 0; i < nums.length; i++){
