@@ -34,7 +34,6 @@ perc.onclick = function(){
 }
 //do the calculation on equal to button
 equalto.onclick = function(){
-    debugger;
     let a = Number(calcAnswer);
     let b = Number(output.innerText);
     if (operator === "X") {
@@ -58,7 +57,6 @@ equalto.onclick = function(){
         if (display == Math.ceil(display)){
             //it's a whole number, do the infinity evaluation
             display = "Infinity";
-
         }
         {
             //it's a fraction, so check the length of the left part
@@ -77,7 +75,6 @@ equalto.onclick = function(){
     }
     else{
         output.innerText = display;
-        console.log("less than 10 length")
     } 
 
     //if it's infinity value, start calculating afresh
